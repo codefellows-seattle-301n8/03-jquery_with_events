@@ -5,6 +5,7 @@ body {
   line-height: 1.5;
   font-size: 100%;
   color: #313131;
+  background-color: #eee;
 }
 
 hr {
@@ -21,6 +22,18 @@ p {
 address {
   display: inline-block;
 }
+
+h1 {
+  font-family: serif;
+  color: #fff;
+  background-color: rgba(10,10,35,0.6);
+  width: 100%;
+}
+.heading-group-h1>h1 {
+  background-color: inherit;
+  color: #115;
+}
+
 
 /*LINK STYLES
 =======================================*/
