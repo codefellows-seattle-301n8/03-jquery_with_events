@@ -5,6 +5,7 @@ body {
   line-height: 1.5;
   font-size: 100%;
   color: #313131;
+  background-color:black;
 }
 
 hr {
@@ -12,14 +13,24 @@ hr {
   width: 80%;
 }
 
+
 /*TEXT STYLES
 =======================================*/
 p {
   font-size: 1em;
+  color:white;
 }
 
 address {
   display: inline-block;
+}
+
+h1{
+  color:#967ADC;
+}
+
+h2{
+  color:white;
 }
 
 /*LINK STYLES
