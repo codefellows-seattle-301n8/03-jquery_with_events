@@ -94,9 +94,9 @@ articleView.setTeasers = function() {
   //       process any .read-on clicks that happen within child nodes.
 
   $('article').on('click', '.read-on', function(e){
-      e.preventDefault();
-    $('.article-body *:nth-of-type(n+2)').show();
-    $('.read-on').hide();
+    e.preventDefault();
+    $(this).siblings().children('.article-body *:nth-of-type(n+2)').show();
+    $(this).hide();
 
   });
 
