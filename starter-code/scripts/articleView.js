@@ -41,7 +41,7 @@ articleView.handleAuthorFilter = function() {
       //       and then show just the ones that match for the author that was selected.
       //       Use an "attribute selector" to find those articles, and fade them in for the reader.
       $('article').hide();
-      $('article[data-author="${$(this).val()}"]').fadeIn();
+      $('article[data-author="' + $(this).val() + '"]').fadeIn();
     } else {
       // TODO: If the select box was changed to an option that is blank, we should
       //       show all the articles, except the one article we are using as a template.
@@ -60,7 +60,8 @@ articleView.handleCategoryFilter = function() {
   $('#category-filter').on('change', function() {
     if ($(this).val()) {
       $('article').hide();
-      $('article[data-category="${$(this).val()}"]').fadeIn();
+      //fadeIn
+      $('article[data-category="' + $(this).val() + '"]').fadeIn();
     } else {
       $('article').fadeIn();
       $('article.template').hide();
