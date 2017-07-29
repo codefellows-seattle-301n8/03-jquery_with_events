@@ -2,7 +2,7 @@
 
 // Configure a view object, to hold all our functions for dynamic updates and article-related event handlers.
 var articleView = {};
-
+console.log('articleView is loaded');
 articleView.populateFilters = function() {
   $('article').each(function() {
     var authorName, category, optionTag;
@@ -31,6 +31,8 @@ articleView.populateFilters = function() {
   });
 };
 
+articleView.populateFilters();
+
 articleView.handleAuthorFilter = function() {
   $('#author-filter').on('change', function() {
     // REVIEW: Inside this function, "this" is the element that triggered the event handler function we're
@@ -55,8 +57,16 @@ articleView.handleCategoryFilter = function() {
   //       When an option with a value is selected, hide all the articles, then reveal the matches.
   //       When the blank (default) option is selected, show all the articles, except for the template.
   //       Be sure to reset the #author-filter while you are at it!
-
+  $('#category-filter').change(function () {
+    if($(this).val()) {
+      $('article').hide();
+      $('#articles [data-category="' + $(this).val() + '"]').show();
+    }
+  });
+//console.log($('#articles [data-category="' + $(this).val() + '"]'));
 };
+
+articleView.handleCategoryFilter();
 
 articleView.handleMainNav = function() {
   // TODO: Add an event handler to .main-nav elements that will power the Tabs feature.
