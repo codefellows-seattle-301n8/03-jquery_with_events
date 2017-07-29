@@ -60,8 +60,8 @@ articleView.handleCategoryFilter = function() {
   $('#category-filter').on('change', function() {
     if ($(this).val()) {
       $('article').hide();
-    } else {
       $('article[data-category="' + $(this).val() + '"]').fadeIn();
+    } else {
       $('article.template').hide();
     }
     $('#author-filter').val('');
