@@ -5,11 +5,18 @@ body {
   line-height: 1.5;
   font-size: 100%;
   color: #313131;
+  background-color: #D3CB00;
 }
 
 hr {
   margin: 1em;
   width: 80%;
+}
+header, header.site-header {
+  background-color: #074989;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: #D37D00;
 }
 
 /*TEXT STYLES
@@ -27,7 +34,7 @@ address {
 
 a, a:link, a:active {
   text-decoration: none;
-  color: #777;
+  color: #D37D00;
 }
 
 a:hover, a:focus {
