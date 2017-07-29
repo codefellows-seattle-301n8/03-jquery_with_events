@@ -92,12 +92,18 @@ articleView.setTeasers = function() {
   //       Ideally, we'd attach this as just 1 event handler on the #articles section, and let it
   //       process any .read-on clicks that happen within child nodes.
   $('#articles').on('click','.read-on', function(e) {
-    e.preventDefault();
-    ($(this).parent().children('.article-body').children()).fadeIn();
-  });
-
+    var $teaserLink = $(this).text();
+    if($teaserLink !== "Show Less") {
+      e.preventDefault();
+      ($(this).parent().children('.article-body').children()).fadeIn();
+    
   // STRETCH GOAl!: change the 'Read On' link to 'Show Less'
-
+      $(this).text("Show Less");
+    } else {
+      $('.article-body *:nth-of-type(n+2)').hide();
+      $(this).text("Read On");
+    }
+});
 };
 
 // TODO: Call all of the above functions, once we are sure the DOM is ready.
