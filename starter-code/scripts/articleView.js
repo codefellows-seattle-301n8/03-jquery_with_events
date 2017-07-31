@@ -85,6 +85,10 @@ articleView.handleMainNav = function() {
 };
 
 articleView.setTeasers = function() {
+  //add show less button
+  var $showLess = $('.show-less');
+  $showLess.hide();
+
   $('.article-body *:nth-of-type(n+2)').hide(); // Hide elements beyond the first 2 in any article body.
 
   // TODO: Add an event handler to reveal all the hidden elements,
@@ -96,12 +100,21 @@ articleView.setTeasers = function() {
     e.preventDefault();
     $(this).hide();
     $(this).siblings('.article-body').contents().show();
+    $(this).siblings('.show-less').show();
   });
   // STRETCH GOAl!: change the 'Read On' link to 'Show Less'
 
-  //add show less button
 
-  var $newButton =
+  $showLess.on('click', function(e){
+    e.preventDefault();
+    $(this).hide();
+    $(this).siblings('.read-on').show();
+    $(this).siblings('.article-body').contents().filter(function() {
+      if($(this).index() > 0) {
+        return this;
+      }
+    }).hide();
+  });
 };
 
 // TODO: Call all of the above functions, once we are sure the DOM is ready.
