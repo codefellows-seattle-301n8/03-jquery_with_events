@@ -22,6 +22,14 @@ address {
   display: inline-block;
 }
 
+h1 {
+  color: purple;
+}
+
+address a {
+  color: purple;
+}
+
 /*LINK STYLES
 =======================================*/
 
